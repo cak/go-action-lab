@@ -1,32 +1,32 @@
-name: Tweeter Action
-author: devigned
-description: Simple action to send a tweet via an GitHub Action.
+name: Caleb's GopherCon Go Action Lab
+author: cak
+description: GopherCon Go Action Lab Workflow
 inputs:
   message:
-    description: 'message you want to tweet'
+    description: "message you want to tweet"
     required: true
   apiKey:
-    description: 'api key for Twitter api'
+    description: "api key for Twitter api"
     required: true
   apiKeySecret:
-    description: 'api key secret for Twitter api'
+    description: "api key secret for Twitter api"
     required: true
   accessToken:
-    description: 'access token for Twitter api'
+    description: "access token for Twitter api"
     required: true
   accessTokenSecret:
-    description: 'access token secret for Twitter api'
+    description: "access token secret for Twitter api"
     required: true
 outputs:
   errorMessage:
-    description: 'if something went wrong, the error message'
+    description: "if something went wrong, the error message"
   sentMessage:
-    description: 'message sent to Twitter'
+    description: "message sent to Twitter"
 runs:
   using: docker
   image: Dockerfile
-#  using: docker
-#  image: docker://ghcr.io/the-gophers/go-action:1.0.0
+  #  using: docker
+  #  image: docker://ghcr.io/the-gophers/go-action:1.0.0
   args:
     - --message
     - "${{ inputs.message }}"
